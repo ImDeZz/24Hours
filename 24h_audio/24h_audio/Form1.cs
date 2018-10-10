@@ -15,6 +15,11 @@ namespace _24h_audio
         public Form1()
         {
             InitializeComponent();
+            SendSound s = new SendSound();
+            for (int i = 0; i < 5000; i++)
+            {
+                s.createSound((uint)i%2);
+            }           
         }
     }
 }
