@@ -12,8 +12,8 @@ namespace _24h_audio
     class ReadSound
     {
 
-        public WaveIn readWave = null;
-        public WaveFileWriter createNewFile = null;
+        public WaveIn waveSource = null;
+        public WaveFileWriter waveFile = null;
 
         public ReadSound()
         {
@@ -22,44 +22,40 @@ namespace _24h_audio
 
         public void Decode()
         {
-            readWave = new WaveIn();
-            readWave.WaveFormat = new WaveFormat(44100, 1);
+            waveSource = new WaveIn();
+            waveSource.WaveFormat = new WaveFormat(44100, 1);
 
-            readWave.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
-            readWave.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
+            waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
+            waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-            createNewFile = new WaveFileWriter("Test0001.wav", readWave.WaveFormat);
+            waveFile = new WaveFileWriter(@"C:\Temp\Test0001.wav", waveSource.WaveFormat);
 
-            readWave.StartRecording();
+            waveSource.StartRecording();
         }
 
         void waveSource_DataAvailable(object sender, WaveInEventArgs e)
         {
-            if (createNewFile != null)
+            if (waveFile != null)
             {
-                createNewFile.Write(e.Buffer, 0, e.BytesRecorded);
-                createNewFile.Flush();
+                waveFile.Write(e.Buffer, 0, e.BytesRecorded);
+                waveFile.Flush();
             }
         }
 
-        public void waveSource_RecordingStopped(object sender, StoppedEventArgs e)
+        void waveSource_RecordingStopped(object sender, StoppedEventArgs e)
         {
-            if (readWave != null)
+            if (waveSource != null)
             {
-                readWave.Dispose();
-                readWave = null;
+                waveSource.Dispose();
+                waveSource = null;
             }
 
-            if (createNewFile != null)
+            if (waveFile != null)
             {
-                createNewFile.Dispose();
-                createNewFile = null;
+                waveFile.Dispose();
+                waveFile = null;
             }
-        }
 
-        internal void StopRecording()
-        {
-            readWave.StopRecording();
         }
     }
 }
