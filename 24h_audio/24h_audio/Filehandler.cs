@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _24h_audio {
-    class Filehandler {
+    public class Filehandler {
         List<Byte> bytes = new List<Byte>();
         List<Byte> mybytes = new List<Byte>();
         string filename;

@@ -40,21 +40,30 @@ namespace _24h_audio
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            Filehandler fh = new Filehandler(selectedFile);
+            fh.toBytes();
             Stopwatch st = new Stopwatch();
             st.Start();
-            Thread playing = new Thread(() => playingSound(st));
+            Thread playing = new Thread(() => playingSound(st, fh));
             playing.Start();            
         }
 
-        public void playingSound(Stopwatch st)
+        public void playingSound(Stopwatch st, Filehandler fh)
         {
             SendSound s = new SendSound();
-            int i = 0;
             while (st.ElapsedMilliseconds <= 115000)
             {
-                i++;
-                s.createSound((uint)i % 2);
-            }         
+                uint[] currentByte = fh.getNextByte();
+
+                int i = 0;
+                if (currentByte != null)
+                {
+                    foreach (uint bit in currentByte)
+                    {
+                        s.createSound(bit);
+                    }
+                }
+            }
         }
     }
 }
