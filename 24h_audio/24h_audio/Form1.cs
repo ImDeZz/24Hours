@@ -76,17 +76,5 @@ namespace _24h_audio
         {
 
         }
-        
-
-        static void Main(string[] args)
-        {
-            mciSendString("open new Type waveaudio Alias recsound", "", 0, 0);
-            mciSendString("record recsound", "", 0, 0);
-            Console.WriteLine("recording, press Enter to stop and save ...");
-            Console.ReadLine();
-
-            mciSendString("save recsound c:\\work\\result.wav", "", 0, 0);
-            mciSendString("close recsound ", "", 0, 0);
-        }
     }
 }
