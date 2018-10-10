@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using NAudio;
+
 namespace _24h_audio
 {
     public partial class Form1 : Form
@@ -17,8 +20,7 @@ namespace _24h_audio
 
         public Form1()
         {
-            InitializeComponent();
-                    
+            InitializeComponent();  
         }
 
         private void quitButton_Click(object sender, EventArgs e)
@@ -68,6 +70,23 @@ namespace _24h_audio
                     return;
                 }
             }
+        }
+
+        private void recButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        static void Main(string[] args)
+        {
+            mciSendString("open new Type waveaudio Alias recsound", "", 0, 0);
+            mciSendString("record recsound", "", 0, 0);
+            Console.WriteLine("recording, press Enter to stop and save ...");
+            Console.ReadLine();
+
+            mciSendString("save recsound c:\\work\\result.wav", "", 0, 0);
+            mciSendString("close recsound ", "", 0, 0);
         }
     }
 }

@@ -35,6 +35,7 @@
             this.playButton = new System.Windows.Forms.Button();
             this.timeStatus = new System.Windows.Forms.Label();
             this.byteCounter = new System.Windows.Forms.Label();
+            this.recButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // quitButton
@@ -98,11 +99,22 @@
             this.byteCounter.TabIndex = 5;
             this.byteCounter.Text = "Bytes Written:";
             // 
+            // recButton
+            // 
+            this.recButton.Location = new System.Drawing.Point(702, 262);
+            this.recButton.Name = "recButton";
+            this.recButton.Size = new System.Drawing.Size(75, 23);
+            this.recButton.TabIndex = 6;
+            this.recButton.Text = "Record";
+            this.recButton.UseVisualStyleBackColor = true;
+            this.recButton.Click += new System.EventHandler(this.recButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.recButton);
             this.Controls.Add(this.byteCounter);
             this.Controls.Add(this.timeStatus);
             this.Controls.Add(this.playButton);
@@ -125,6 +137,7 @@
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Label timeStatus;
         private System.Windows.Forms.Label byteCounter;
+        private System.Windows.Forms.Button recButton;
     }
 }
 
