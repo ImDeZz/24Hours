@@ -14,10 +14,10 @@ namespace _24h_audio
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern bool Beep(uint dwFreq, uint dwDuration);
 
-        const uint beepTime = 60;
+        const uint beepTime = 125;
         const int parseTime = 15;
-        const uint highPitch = 10000;
-        const uint lowPitch = 1000;
+        const uint highPitch = 1000;
+        const uint lowPitch = 50;
 
         public SendSound()
         {}
