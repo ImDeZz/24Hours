@@ -17,6 +17,7 @@ namespace _24h_audio
     public partial class Form1 : Form
     {
         public string selectedFile;
+        ReadSound readSound = new ReadSound();
 
         public Form1()
         {
@@ -74,7 +75,12 @@ namespace _24h_audio
 
         private void recButton_Click(object sender, EventArgs e)
         {
+            readSound.Decode();
+        }
 
+        private void stoprecButton_Click(object sender, EventArgs e)
+        {
+            readSound.StopRecording();
         }
     }
 }
