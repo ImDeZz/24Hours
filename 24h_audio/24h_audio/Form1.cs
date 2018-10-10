@@ -15,6 +15,9 @@ namespace _24h_audio
         public Form1()
         {
             InitializeComponent();
+            Filehandler file = new Filehandler("teszt.txt");
+            file.toBytes();
+            file.toFile("ki.txt");
         }
     }
 }

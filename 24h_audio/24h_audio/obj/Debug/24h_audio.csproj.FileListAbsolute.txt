@@ -1,0 +1,10 @@
+D:\Pannon\24oras\24h_audio\24h_audio\bin\Debug\24h_audio.exe.config
+D:\Pannon\24oras\24h_audio\24h_audio\bin\Debug\24h_audio.exe
+D:\Pannon\24oras\24h_audio\24h_audio\bin\Debug\24h_audio.pdb
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\24h_audio.csprojResolveAssemblyReference.cache
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\_24h_audio.Form1.resources
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\_24h_audio.Properties.Resources.resources
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.GenerateResource.Cache
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.CoreCompileInputs.cache
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\24h_audio.exe
+D:\Pannon\24oras\24h_audio\24h_audio\obj\Debug\24h_audio.pdb
