@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.quitButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openedFilePathTextBox = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.byteCounter = new System.Windows.Forms.Label();
             this.recButton = new System.Windows.Forms.Button();
             this.stoprecButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // quitButton
@@ -120,6 +122,11 @@
             this.stoprecButton.UseVisualStyleBackColor = true;
             this.stoprecButton.Click += new System.EventHandler(this.stoprecButton_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +158,7 @@
         private System.Windows.Forms.Label byteCounter;
         private System.Windows.Forms.Button recButton;
         private System.Windows.Forms.Button stoprecButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

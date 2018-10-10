@@ -17,7 +17,7 @@ namespace _24h_audio
 
         public ReadSound()
         {
-
+            
         }
 
         public void Decode()
@@ -27,7 +27,7 @@ namespace _24h_audio
 
             readWave.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
             readWave.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
-
+            
             createNewFile = new WaveFileWriter("Test0001.wav", readWave.WaveFormat);
 
             readWave.StartRecording();

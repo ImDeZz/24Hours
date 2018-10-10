@@ -11,6 +11,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using NAudio;
+using NAudio.CoreAudioApi;
 
 namespace _24h_audio
 {
@@ -18,6 +19,7 @@ namespace _24h_audio
     {
         public string selectedFile;
         ReadSound readSound = new ReadSound();
+        MMDevice device = null;
 
         public Form1()
         {
@@ -75,12 +77,21 @@ namespace _24h_audio
 
         private void recButton_Click(object sender, EventArgs e)
         {
-            readSound.Decode();
+            timer1.Enabled = true;
+            MMDeviceEnumerator microphones = new MMDeviceEnumerator();
+            device = microphones.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active)[0];
+            Console.WriteLine("Using " + device.ToString());
+            //readSound.Decode();
         }
 
         private void stoprecButton_Click(object sender, EventArgs e)
         {
             readSound.StopRecording();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine((int)(device.AudioMeterInformation.MasterPeakValue*100*0.5));
         }
     }
 }

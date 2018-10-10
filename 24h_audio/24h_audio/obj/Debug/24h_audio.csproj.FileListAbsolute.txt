@@ -21,3 +21,6 @@ E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.pdb
 C:\Git\24h_audio\24h_audio\bin\Debug\NAudio.dll
 C:\Git\24h_audio\24h_audio\bin\Debug\NAudio.xml
 C:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.CopyComplete
+E:\Git\24h_audio\24h_audio\bin\Debug\NAudio.dll
+E:\Git\24h_audio\24h_audio\bin\Debug\NAudio.xml
+E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.CopyComplete
