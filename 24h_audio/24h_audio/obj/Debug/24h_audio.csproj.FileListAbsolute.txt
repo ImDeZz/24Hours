@@ -8,3 +8,13 @@ C:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.GenerateResource.cache
 C:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.CoreCompileInputs.cache
 C:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.exe
 C:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.pdb
+E:\Git\24h_audio\24h_audio\bin\Debug\24h_audio.exe.config
+E:\Git\24h_audio\24h_audio\bin\Debug\24h_audio.exe
+E:\Git\24h_audio\24h_audio\bin\Debug\24h_audio.pdb
+E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csprojAssemblyReference.cache
+E:\Git\24h_audio\24h_audio\obj\Debug\_24h_audio.Form1.resources
+E:\Git\24h_audio\24h_audio\obj\Debug\_24h_audio.Properties.Resources.resources
+E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.GenerateResource.cache
+E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.csproj.CoreCompileInputs.cache
+E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.exe
+E:\Git\24h_audio\24h_audio\obj\Debug\24h_audio.pdb

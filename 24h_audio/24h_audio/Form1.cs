@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Threading;
+using System.Diagnostics;
 namespace _24h_audio
 {
     public partial class Form1 : Form
@@ -17,16 +18,13 @@ namespace _24h_audio
         public Form1()
         {
             InitializeComponent();
-            SendSound s = new SendSound();
-            for (int i = 0; i < 5000; i++)
-            {
-                s.createSound((uint)i%2);
-            }           
+                    
         }
 
         private void quitButton_Click(object sender, EventArgs e)
         {
             this.Dispose();
+             
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -42,7 +40,21 @@ namespace _24h_audio
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            Stopwatch st = new Stopwatch();
+            st.Start();
+            Thread playing = new Thread(() => playingSound(st));
+            playing.Start();            
+        }
 
+        public void playingSound(Stopwatch st)
+        {
+            SendSound s = new SendSound();
+            int i = 0;
+            while (st.ElapsedMilliseconds <= 115000)
+            {
+                i++;
+                s.createSound((uint)i % 2);
+            }         
         }
     }
 }

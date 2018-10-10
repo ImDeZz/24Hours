@@ -33,6 +33,8 @@
             this.openedFilePathTextBox = new System.Windows.Forms.TextBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
+            this.timeStatus = new System.Windows.Forms.Label();
+            this.byteCounter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // quitButton
@@ -78,11 +80,31 @@
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
+            // timeStatus
+            // 
+            this.timeStatus.AutoSize = true;
+            this.timeStatus.Location = new System.Drawing.Point(31, 31);
+            this.timeStatus.Name = "timeStatus";
+            this.timeStatus.Size = new System.Drawing.Size(74, 13);
+            this.timeStatus.TabIndex = 4;
+            this.timeStatus.Text = "Elapsed Time:";
+            // 
+            // byteCounter
+            // 
+            this.byteCounter.AutoSize = true;
+            this.byteCounter.Location = new System.Drawing.Point(31, 59);
+            this.byteCounter.Name = "byteCounter";
+            this.byteCounter.Size = new System.Drawing.Size(73, 13);
+            this.byteCounter.TabIndex = 5;
+            this.byteCounter.Text = "Bytes Written:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.byteCounter);
+            this.Controls.Add(this.timeStatus);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.openedFilePathTextBox);
@@ -101,6 +123,8 @@
         private System.Windows.Forms.TextBox openedFilePathTextBox;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Label timeStatus;
+        private System.Windows.Forms.Label byteCounter;
     }
 }
 
