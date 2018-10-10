@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using NAudio;
+
 namespace _24h_audio
 {
     public partial class Form1 : Form
     {
         public string selectedFile;
+        ReadSound readSound = new ReadSound();
 
         public Form1()
         {
-            InitializeComponent();
-                    
+            InitializeComponent();  
         }
 
         private void quitButton_Click(object sender, EventArgs e)
@@ -68,6 +71,16 @@ namespace _24h_audio
                     return;
                 }
             }
+        }
+
+        private void recButton_Click(object sender, EventArgs e)
+        {
+            readSound.Decode();
+        }
+
+        private void stoprecButton_Click(object sender, EventArgs e)
+        {
+            readSound.StopRecording();
         }
     }
 }
