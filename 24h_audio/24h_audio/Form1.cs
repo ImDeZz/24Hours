@@ -45,7 +45,7 @@ namespace _24h_audio
             Stopwatch st = new Stopwatch();
             st.Start();
             Thread playing = new Thread(() => playingSound(st, fh));
-            playing.Start();            
+            playing.Start();
         }
 
         public void playingSound(Stopwatch st, Filehandler fh)
@@ -62,6 +62,10 @@ namespace _24h_audio
                     {
                         s.createSound(bit);
                     }
+                }
+                else
+                {
+                    return;
                 }
             }
         }
