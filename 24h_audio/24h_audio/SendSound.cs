@@ -10,7 +10,7 @@ using System.Threading;
 namespace _24h_audio
 {
     class SendSound
-    {
+    {       
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern bool Beep(uint dwFreq, uint dwDuration);
 
